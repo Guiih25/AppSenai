@@ -43,25 +43,23 @@ def main(page: flet.Page):
         page.update()
 
     # Componentes
-    text = Text("Hello World!")
+    text_saudacao = Text("Olá! digite seu nome")
+    text = Text("")
     input_nome = TextField(label="Digite seu nome: ")
     input_sobrenome = TextField(label="Digite seu sobrenome: ")
     btn_salvar = OutlinedButton("Salvar", on_click=salvar_nome)
     input_numero_impar_par = TextField(label = "Digite seu numero: ")
-    text2 = Text("oi")
+    text2 = Text("")
     btn_nm = OutlinedButton("ver", on_click=impar_par)
     input_digite_idade = TextField(label="Digite o ano do seu nascimento: ")
     text3 = Text("")
     btn_idade = OutlinedButton("Calcular", on_click=verificar_idade)
 
-
-
-
-
     # Construção da tela
     page.add(
         Column(
             [
+                text_saudacao,
                 input_nome,
                 input_sobrenome,
                 btn_salvar,
@@ -73,13 +71,10 @@ def main(page: flet.Page):
                 text3,
                 btn_idade
 
-
-
             ],
             width=400,
             horizontal_alignment=CrossAxisAlignment.CENTER
         )
     )
 
-print(tempo)
 flet.app(main)
