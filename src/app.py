@@ -1,7 +1,7 @@
 from cProfile import label
 
 import flet
-from flet import ThemeMode, Text, TextField, OutlinedButton, Column, CrossAxisAlignment
+from flet import ThemeMode, Text, TextField, OutlinedButton, Column, CrossAxisAlignment, Container, Colors, FontWeight
 from datetime import datetime
 
 
@@ -60,21 +60,58 @@ def main(page: flet.Page):
         Column(
             [
                 text_saudacao,
-                input_nome,
-                input_sobrenome,
-                btn_salvar,
-                text,
-                input_numero_impar_par,
-                text2,
-                btn_nm,
-                input_digite_idade,
-                text3,
-                btn_idade
+                Container(
+                    Column(
+                        [
+                            Text("Atividade 1", weight=FontWeight.BOLD, color=Colors.RED_500, size=25),
+                            input_nome,
+                            input_sobrenome,
+                            btn_salvar,
+                            text,
+                        ],
+                        horizontal_alignment=CrossAxisAlignment.CENTER,
+                    ),
+                    bgcolor=Colors.INDIGO_900,
+                    border_radius=10,
+                    padding=5,
+                    width=400,
+                ),
+
+                Container(
+                    Column(
+                        [
+                            input_numero_impar_par,
+                            btn_nm,
+                            text2,
+                        ],
+                        horizontal_alignment=CrossAxisAlignment.CENTER,
+                    ),
+                    bgcolor=Colors.RED_500,
+                    border_radius=10,
+                    padding=5,
+                    width=400,
+                ),
+
+                Container(
+                    Column(
+                        [
+                            input_digite_idade,
+                            btn_idade,
+                            text3
+                        ],
+                        horizontal_alignment=CrossAxisAlignment.CENTER,
+                    ),
+                    bgcolor=Colors.GREEN,
+                    border_radius=10,
+                    padding=5,
+                    width=400,
+                )
+
 
             ],
             width=400,
-            horizontal_alignment=CrossAxisAlignment.CENTER
+
         )
     )
 
-flet.app(main)
+flet.run(main)
