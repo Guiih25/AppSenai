@@ -14,6 +14,8 @@ def main(page: ft.Page):
 
     list_view = ListView(expand=True, spacing=10, padding=15)
 
+
+
     def montar_lista_personagens():
         list_view.controls.clear()
         lista_dados = get_personagens()
@@ -35,7 +37,7 @@ def main(page: ft.Page):
                     padding=15,
                     margin=ft.Margin(0, 0, 0, 15),
                     content=ft.Column([
-                        ft.Image(src=imagem, width=400, height=200, fit="cover",
+                        ft.Image(src=imagem, width=80, height=200, fit="cover",
                                  border_radius=ft.BorderRadius(10, 10, 10, 10)),
                         ft.Column([
                             ft.Row([
